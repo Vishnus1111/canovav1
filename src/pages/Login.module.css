@@ -1,0 +1,183 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Inter', sans-serif;
+  justify-content: center;
+  align-items: center;
+  background-color: #bfdaf5;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow-x: hidden; 
+}
+
+.canovaTag{
+    position: absolute;
+    left: 80px;
+    top: 60px;
+}
+
+/* Left side with logo */
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 60px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 46px;
+  height: 46px;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Card */
+.card {
+  width: 440px;
+  height: 600px;
+  max-width: 460px;  /* <-- increased from 400px */
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  padding-right: 30px;
+  /* padding: 40px;     */
+  padding-bottom: 40px;
+  border-radius: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 30px;
+  font-weight: semibold;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 36px;
+  margin-right: 40px;
+  margin-left: 45px;
+  margin-top: 50px;
+  justify-content: center;
+  text-align: center;
+  max-width: 380px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 40px;
+/* font-style is not used for font families. Use font-family instead. */
+font-family: 'Inter', sans-serif;
+/* To check if the font is applied, inspect the element in browser dev tools and see computed styles. */
+  line-height: 1.4;
+  max-width: 380px;
+  margin-left: 67px;
+  margin-right: 60px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 380px;
+  margin-left: 67px;
+  margin-right: 80px;
+}
+
+.input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  flex-direction: column;
+  display: block;
+  font-size: 14px;
+  outline: none;
+  width: 300px;
+  max-width: 380px;
+  box-sizing: border-box;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.passwordWrapper {
+  position: relative;
+}
+
+
+.button {
+  background-color: #69B5F8;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 8px;
+  cursor: pointer;
+  width: 320px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.button:hover {
+  background-color: #2575c1;
+}
+
+.loginText {
+  margin-top: 16px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.loginText a {
+  color: #3498f3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footerText{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #313957;
+    margin-top: 20PX;
+}
+
+.passwordWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.eyeIcon {
+  position: absolute;
+  top: 50%;
+  right: -28px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.forgotPasswordLink {
+  color: #1d4ae8;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 12px;
+  display: block;
+  text-align: right;
+  margin-right: -22px;
+}
+
+.link{
+    color: #1d4ae8;
+    text-decoration: none;
+}

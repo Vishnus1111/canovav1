@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--heading-color);
+}
+
+.settingsBox {
+  background-color: var(--box-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.settingsBox h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: var(--heading-color);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--label-color);
+}
+
+select {
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  outline: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme Variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --heading-color: #111111;
+  --box-bg: #f9f9f9;
+  --border-color: #dddddd;
+  --label-color: #333333;
+  --input-bg: #ffffff;
+  --input-text: #000000;
+}
+
+[data-theme='dark'] {
+  --bg-color: #1e1e1e;
+  --text-color: #f5f5f5;
+  --heading-color: #ffffff;
+  --box-bg: #2b2b2b;
+  --border-color: #444444;
+  --label-color: #e0e0e0;
+  --input-bg: #333333;
+  --input-text: #f5f5f5;
+}

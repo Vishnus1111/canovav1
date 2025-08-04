@@ -1,0 +1,191 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Inter', sans-serif;
+  justify-content: center;
+  align-items: center;
+  background-color: #bfdaf5;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow-x: hidden; 
+  /* width: 420px; */
+}
+
+.canovaTag {
+  position: absolute;
+  left: 80px;
+  top: 60px;
+}
+
+/* Left side with logo */
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 60px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 46px;
+  height: 46px;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Card */
+.card {
+  width: 440px;
+  height: auto;
+  max-width: 460px;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  display: block;
+  padding-right: 20px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: semibold;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 16px;
+  margin-right: 20px;
+  margin-left: 30px;
+  margin-top: 10px;
+  justify-content: center;
+  text-align: center;
+  max-width: 600px;
+  display: inline-block !important;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 40px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.4;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 100%;
+  width: 100%;
+   margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.input {
+  padding: 12px;
+  padding-right: 40px; /* space for eye icon */
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  display: block;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  /* margin-left: 0 !important;
+  margin-right: 0 !important; */
+}
+
+.passwordWrapper {
+  position: relative;
+  width: 100%;
+}
+
+
+.eyeIcon {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.button {
+  background-color: #69B5F8;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #2575c1;
+}
+
+.loginText {
+  margin-top: 16px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.loginText a {
+  color: #3498f3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footerText {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: #313957;
+  margin-top: 20px;
+}
+
+.forgotPasswordLink {
+  color: #1d4ae8;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 12px;
+  display: block;
+  text-align: right;
+  margin-right: -22px;
+}
+
+.link {
+  color: #1d4ae8;
+  text-decoration: none;
+}
+
+.inputContainer label {
+        margin-left: 35px;
+        margin-right: 0;
+}
+
+.form label{
+        margin-left: 35px;
+        margin-right: 0;
+}

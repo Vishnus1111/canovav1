@@ -1,0 +1,79 @@
+.sidebar {
+  width: 180px;
+  background: #f9fbfd;
+  border-right: 1.5px solid #e8ebef;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 16px 0;
+  margin: 0; /* ✅ Remove unwanted margin */
+}
+
+.logoContainer {
+  margin-bottom: 8px; /* ✅ Minimal gap */
+  padding-left: 16px;
+}
+
+.logo {
+  width: 18px;
+  height: auto;
+}
+
+.companyLogo {
+  width: 60px;
+  height: auto;
+}
+
+.sidebarList {
+  padding: 0;
+  margin: 0;
+  gap: 100px  ;
+}
+
+.sidebarItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f1f1f;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sidebarItem img {
+  width: 20px;
+  height: 20px;
+}
+
+.sidebarItem:hover {
+  background-color: #bfdaf5;
+}
+
+.active {
+  background-color: #bfdaf5;
+  width: 100%; /* ✅ Full width highlight */
+}
+
+
+.sidebarFooter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 450px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.sidebarFooter img {
+  width: 22px;
+  height: 22px;
+}
+
+.profilebtn{
+  margin-left: -10px;
+}

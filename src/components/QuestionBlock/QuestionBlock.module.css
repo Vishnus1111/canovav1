@@ -1,0 +1,448 @@
+.qBlock {
+  border-radius: 14px;                               /* Slightly less radius for subtle roundness */
+  margin-bottom: 32px;                               /* More vertical spacing */
+  background: #f9fbff;                               /* Figma's ultra-light bluish white */
+  box-shadow: 0 4px 16px 0 rgba(52,86,176, 0.07);    /* Softer, larger shadow and lighter color */
+  padding: 30px 40px 30px 32px;                      /* More padding, equal spacing */
+  min-width: 340px;
+  border: 1.3px solid #e8eaf2;                       /* Lighter, thinner border */
+  transition: box-shadow 0.15s;
+}
+
+.qBlock:focus-within {
+  box-shadow: 0 8px 22px 0 rgba(30, 54, 116, 0.09);
+}
+
+.qHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+  gap: 12px;
+}
+
+.serialNum {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #b0bbcb;
+  margin-right: 12px;
+  letter-spacing: 0.4px;
+}
+
+.qText {
+  display: inline-block;   /* Prevents span from filling full flex container width */
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #25304a;
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  min-height: 36px;
+  border-radius: 6px;
+  padding: 4px 8px;
+  transition: background 0.11s;
+  max-width: fit-content;  /* shrink wrap width */
+  margin-right: 400px;
+}
+
+.qText:hover,
+.qText:focus {
+  background: #f0f6fe;
+}
+
+.qText:focus,
+.qText:hover {
+  background: #eef2fb;
+}
+
+.qInput {
+  flex: 1 1 0;
+  font-size: 1.09rem;
+  border: 1px solid #dfebf8;
+  border-radius: 6px;
+  outline: none;
+  padding: 9px 13px;
+  font-weight: 500;
+  background: #fafdff;
+  color: #29385c;
+  transition: border 0.17s;
+}
+
+.qInput:focus {
+  border: 1.5px solid #6ea7f8;
+  background: #f3f8ff;
+}
+
+.dropdownWrap {
+  position: relative;
+  margin-left: 12px;
+}
+
+.typeSelector {
+  background: #f5f7fc;
+  border: 1.1px solid #ced9ed;
+  border-radius: 5px;
+  padding: 8px 28px 8px 13px;
+  font-size: 0.99rem;
+  cursor: pointer;
+  min-width: 136px;
+  color: #28457d;
+}
+
+.typeMenu {
+  position: absolute;
+  left: 0;
+  top: 112%;
+  z-index: 10;
+  background: #fff;
+  border: 1.2px solid #cad1ec;
+  border-radius: 8px;
+  width: 178px;
+  box-shadow: 0 3px 18px rgba(60,103,164,0.13);
+}
+.typeOption {
+  padding: 10px 20px;
+  font-size: 1.01rem;
+  cursor: pointer;
+  color: #29385c;
+  letter-spacing: 0.01em;
+  border-radius: 4px;
+  transition: background 0.12s;
+}
+.typeOption:hover {
+  background: #ecf2fc;
+}
+
+.optionsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-top: 8px;
+}
+.optionInput {
+  padding: 11px 16px;
+  font-size: 1.05rem;
+  border: 1.2px solid #d0d9e7;
+  border-radius: 7px;
+  outline: none;
+  background: #fff;
+  color: #33416d;
+  width: 95%;
+  box-sizing: border-box;
+  margin-left: 30px;
+  transition: border-color 0.17s;
+}
+.optionInput:focus {
+  border-color: #6ea7f8;
+  background: #f5faff;
+}
+
+/* --- Short Answer Box --- */
+.shortAnswerPreview {
+  width: 96.5%;
+  min-width: 270px;
+  max-width: 900px;
+  height: 64px;
+  margin-top: 8px;
+  padding-left: 16px;
+  font-size: 1.07rem;
+  border-radius: 8px;
+  background-color: #e7eef5;
+  border: 1.3px solid #dbe3f1;
+  color: #294371;
+  cursor: text;
+  margin-left: 30px;
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  box-sizing: border-box;
+  resize: none;
+  outline: none;
+  transition: border 0.14s;
+}
+.shortAnswerPreview:focus {
+  border: 1.4px solid #a5c4ff;
+  background: #e5f2fd;
+}
+
+::placeholder {
+  color: #b9bed0;
+  opacity: 1;
+}
+
+/* --- Long Answer Box (white, taller, styled) --- */
+.longAnswerPreview {
+  width: 97.5%;
+  min-width: 270px;
+  max-width: 920px;
+  height: 130px;
+  margin-top: 8px;
+  padding: 16px 17px 13px 16px;
+  font-size: 1.09rem;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1.3px solid #dbe3f1;
+  color: #294371;
+  cursor: text;
+  margin-left: 30px;
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  box-sizing: border-box;
+  resize: none;
+  outline: none;
+  transition: border 0.14s;
+}
+.longAnswerPreview:focus {
+  border: 1.4px solid #a5c4ff;
+  background: #f3f8ff;
+}
+
+.optionRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  margin-left: 30px;
+  border-radius: 6px;
+  padding: 6px 0;
+  user-select: none;
+  outline: none;
+  min-height: 34px;
+}
+
+.customRadio, .radioInnerCircle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #aab7d9;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.radioInnerCircle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #3b6fff; /* selected blue */
+}
+
+.customCheckbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 2px solid #aab7d9;    /* border color when unchecked */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #fff;        /* background when unchecked */
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.checkboxCheckmark {
+  font-size: 14px;
+  color: #fff;                   /* white tick */
+  user-select: none;
+}
+
+.optionText {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #1e254f;
+  cursor: text;
+  user-select: text;
+  padding: 7px 6px;
+  flex: 1;
+}
+
+.selectedOption .customCheckbox, /* or use the correct class applied on selected option */
+.customCheckbox.checked {          /* if you toggle a class on checkbox span */
+  background-color: #69b5f8;     /* blue fill */
+  border-color: #69b5f8;         /* blue border or you can remove border with 'border: none;' */
+}
+
+.optionInput {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #1e254f;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1.5px solid #c1c9d1;
+  outline: none;
+  transition: border-color 0.2s ease;
+  flex: 1;
+}
+
+.optionInput:focus {
+  border-color: #3b6fff;
+  background-color: #f0f5ff;
+}
+
+.dateBox {
+  padding: 11px 18px;
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  color: #232c41;
+  border: 1.5px solid #d2dae3;
+  border-radius: 8px;
+  background: #fcfcfd;
+  cursor: pointer;
+  font-size: 1.08em;
+  min-width: 135px;
+  min-height: 44px;
+  transition: border-color 0.19s;
+}
+.dateBox:focus {
+  outline: none;
+  border-color: #4286ff;
+  background: #f4f7fe;
+}
+.datePlaceholder {
+  color: #b0b7c7;
+}
+.nativeDateInput {
+  font-size: 1.08em;
+  font-family: "Inter", sans-serif;
+  background: #fcfcfd;
+  color: #232c41;
+  border: 1.5px solid #4077fa;
+  border-radius: 8px;
+  padding: 8px 12px;
+  min-width: 135px;
+  min-height: 44px;
+  outline: none;
+}
+
+.sliderBox {
+  position: relative;
+  width: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.linearSliderValue {
+  margin-top: 4px;
+  color: #5177d9;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+  text-align: center;
+}
+
+
+.linearScaleSection { margin-top: 16px; }
+.linearLabel { font-size: 1.06em; color: #232c41; margin-bottom: 8px; font-family: "Inter", sans-serif; }
+.linearScaleWrap { display: flex; align-items: center; gap: 10px; }
+.linearSlider { width: 190px; accent-color: #6ea0ff; }
+.linearMin, .linearMax { color: #b6b6b8; min-width: 24px; font-family: "Inter", sans-serif; }
+.linearCurrentValue { font-weight: bold; color: #5177d9; font-family: "Inter", sans-serif; margin: 0 6px; }
+
+
+.dropdownWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.dropdownHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.dropdownArrow {
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+}
+
+.dropdownMenuItem {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdownMenuItem:last-child {
+  border-bottom: none;
+}
+
+.dropdownMenuItem:hover {
+  background: #f5f5f5;
+}
+
+.dropdownMenuItem.selected {
+  background: #eaeaea;
+  font-weight: bold;
+}
+
+.fileUploadSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.fileRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap; /* Keep all in one line */
+}
+
+.label {
+  font-weight: 500;
+  white-space: nowrap;
+  min-width: 120px;
+}
+
+.smallInput {
+  width: 45px; /* Smaller width to fit in single line */
+  padding: 4px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.mbLabel {
+  font-size: 14px;
+  color: #555;
+  margin-left: -4px;
+}
+
+.fileTypesRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+

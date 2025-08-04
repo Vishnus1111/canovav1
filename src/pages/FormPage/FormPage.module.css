@@ -1,0 +1,261 @@
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Wrapper to hold top bar + content (builder + right panel) */
+.mainWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Top Bar */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 32px;
+  border: 1px solid black;
+  background: #fff;
+  height: 70px; /* Fixed height for alignment */
+}
+
+.formTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.topBarButtons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.previewBtn,
+.saveBtn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.previewBtn {
+  background-color: #e7eef5;
+  color: #6c757d;
+  border: 1px solid #dee2e6;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.previewBtn:hover {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.saveBtn {
+  background-color: black;
+  color: white;
+  border: 1px solid #007bff;
+}
+
+.saveBtn:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Content Row: remaining height below top bar */
+.contentRow {
+  display: flex;
+  height: calc(100vh - 70px); /* Full height minus top bar */
+    border: 1px black;
+}
+
+/* Form Builder Area: flexible width, scrollable */
+.formBuilderArea {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 32px;
+  background: #fff;
+   border: 1px solid black !important;
+}
+
+/* Right Panel: fixed height under top bar */
+.rightPanel {
+  width: 300px;
+  background: #e7eef5;
+  border-left: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.actionStack {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.actionBtn {
+  background: transparent;
+  border: none; /* ✅ Remove border unless explicitly needed */
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.colorPickContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.colorRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-color: #ddd;
+  background-color: white;
+  border-radius: 12px;
+}
+
+.colorInput {
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: none;
+   /* margin-bottom: -1px; */
+}
+
+.nextBtn {
+  position: relative;
+  right: 20px;
+  top: 20px;
+  margin-top: auto;
+  width: 95%;
+  padding: 12px;
+  background: #000;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* ✅ Flowchart View */
+.flowView {
+  flex: 1;
+  position: relative;
+  overflow-y: auto;
+}
+
+
+/* SVG for arrows */
+.flowSvg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.nodesWrapper {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.pageNode {
+  position: absolute;
+  width: 120px;
+  height: 60px;
+  background: #e7eef5;
+  border: 2px solid transparent;
+  border-radius: 14px; /* Increased radius */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.sidebarContainer {
+  height: 100vh;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.flowInner {
+  position: relative;
+  width: 100%;
+}
+
+.flowSvg {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.blurFormArea {
+  position: absolute;
+  top: 0;
+  left: 250px; /* Sidebar width */
+  width: calc(100% - 500px); /* Keep sidebars intact */
+  height: 100%;
+  backdrop-filter: blur(10px); /* stronger blur */
+  background: rgba(255, 255, 255, 0.6); /* white tint */
+  z-index: 2000;
+}
+
+.formBuilderArea.blur {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.actionBtn,
+.optionButton {
+  border: none !important; /* ✅ Remove all borders */
+  outline: none;
+  background: none;
+  margin-right: 40px;
+    margin-bottom: -18px;
+}
+
+.optionButton{
+  margin-right: 45px;
+}
+
+/* .actionBtn img,
+.optionButton img {
+  width: 100px; /* ✅ Slightly smaller icons */
+  /* height: 100px; */
+
+
+.actionBtn:hover,
+.optionButton:hover {
+  transform: scale(1.08);
+}

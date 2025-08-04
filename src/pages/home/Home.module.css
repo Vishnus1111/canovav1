@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
+.content {
+  flex: 1;
+  background: #fff;
+  padding: 24px 32px;
+  margin: 0;
+  border: 1px solid #d9d9d9;
+  border-radius: 12px 0 0 12px;
+}
+
+.blur {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.divider {
+  border: 1px solid #d9d9d9;
+  margin: 8px 0 28px;
+  width: 105%;
+  margin-left: -33px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row; /* ✅ Buttons stay in a row */
+  gap: 20px;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.actions button {
+  background: white;
+  border: none;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1); /* ✅ Softer shadow */
+  border-radius: 14px;
+  padding: 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column; /* ✅ Icon and text inside button are stacked */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 14px; /* Space between icon and text */
+  width: 350px; /* ✅ Proper width per button */
+  max-width: 400px;
+}
+
+.actions button img {
+  width: 50px; /* ✅ Bigger icon */
+  height: 50px;
+  background: #69b5f8;
+  border: 4px solid #69b5f8;
+  padding: 12px;
+  border-radius: 18px; /* ✅ Rounded icons */
+}
+
+.actions button .head {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #0d0d0d; /* ✅ Darker head text */
+  display: block;
+}
+
+.actions button span:not(.head) {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #6c6c6c;
+  line-height: 1.4;
+}
+
+
+.recentWorks {
+  margin-top: 24px;
+}
