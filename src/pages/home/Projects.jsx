@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import styles from './Projects.module.css'; // You'll create this
+import API_BASE_URL from '../../config';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/projects')
+    fetch(`${API_BASE_URL}/api/projects`)
       .then((res) => res.json())
       .then((data) => {
         setProjects(data);

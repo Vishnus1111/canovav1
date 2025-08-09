@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "./ResetPassword.module.css";
+import API_BASE_URL from '../../config';
 
 function ResetPassword() {
   const [newPassword, setNewPassword] = useState("");
@@ -39,7 +40,7 @@ function ResetPassword() {
 
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/api/auth/reset-password", {
+      const res = await fetch(`${API_BASE_URL}/api/auth/reset-password`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, newPassword }),

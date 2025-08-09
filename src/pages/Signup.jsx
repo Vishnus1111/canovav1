@@ -4,6 +4,7 @@ import styles from "./Signup.module.css";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import API_BASE_URL from '../config';
 
 function Signup() {
     const [showPassword, setShowPassword] = useState(false);
@@ -43,7 +44,7 @@ function Signup() {
 
         try {
             // ✅ Correct API endpoint for signup
-            const res = await fetch("http://localhost:5000/api/auth/register", {
+            const res = await fetch(`${API_BASE_URL}/api/auth/register`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, email, password }),

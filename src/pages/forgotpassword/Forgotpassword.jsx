@@ -3,6 +3,7 @@ import styles from "./ForgotPassword.module.css";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import API_BASE_URL from '../../config';
 
 function ForgotPassword() {
   const [step, setStep] = useState(1);
@@ -23,7 +24,7 @@ function ForgotPassword() {
     try {
       setLoading(true);
       const res = await fetch(
-        "http://localhost:5000/api/auth/forgot-password",
+        `${API_BASE_URL}/api/auth/forgot-password`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -55,7 +56,7 @@ function ForgotPassword() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/verify-otp", {
+      const res = await fetch(`${API_BASE_URL}/api/auth/verify-otp`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, otp }),

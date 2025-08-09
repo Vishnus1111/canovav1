@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Analysis.module.css"; // Create a CSS file for styling
 import axios from "axios";
+import API_BASE_URL from '../../config';
 
 const Analysis = () => {
   const [forms, setForms] = useState([]);
@@ -9,7 +10,7 @@ const Analysis = () => {
     const fetchForms = async () => {
       try {
         const user = JSON.parse(localStorage.getItem("user"));
-        const res = await axios.get("http://localhost:5000/api/forms/user/" + user._id);
+        const res = await axios.get(`${API_BASE_URL}/api/forms/user/` + user._id);
         setForms(res.data);
       } catch (error) {
         console.error("Failed to fetch forms:", error);

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./SaveModal.module.css";
+import API_BASE_URL from '../../config';
 
 const SaveModal = ({ onClose, projectName, userEmail, formData }) => {
   const [mails, setMails] = useState([userEmail]); // Owner added by default
@@ -44,7 +45,7 @@ const SaveModal = ({ onClose, projectName, userEmail, formData }) => {
     );
 
     try {
-      const res = await fetch("http://localhost:5000/api/forms/save", {
+      const res = await fetch(`${API_BASE_URL}/api/forms/save`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

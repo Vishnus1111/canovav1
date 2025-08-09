@@ -5,6 +5,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import API_BASE_URL from '../config';
 
 function Login() {
     const [showPassword, setShowPassword] = useState(false);
@@ -26,7 +27,7 @@ function Login() {
 
         try {
             // ✅ Call backend login API
-            const res = await fetch('http://localhost:5000/api/auth/login', {
+            const res = await fetch(`${API_BASE_URL}/api/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password }),
