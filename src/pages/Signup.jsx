@@ -56,6 +56,7 @@ function Signup() {
                 toast.error(data.error || "Signup failed"); // ✅ Handle backend error properly
                 setLoading(false);
             } else {
+                setLoading(false);
                 toast.success("Signup successful! Redirecting to login...", {
                     onClose: () => navigate("/"), // ✅ Redirect after success
                     autoClose: 2000,
