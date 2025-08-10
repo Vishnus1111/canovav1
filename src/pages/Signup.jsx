@@ -61,7 +61,7 @@ function Signup() {
                         setLoading(false); // Reset loading only when redirecting
                         navigate("/");
                     },
-                    autoClose: 1500,
+                    autoClose: 1000,
                 });
             }
         } catch (error) {
