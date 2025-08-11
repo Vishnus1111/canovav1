@@ -18,10 +18,12 @@ function Signup() {
         if (loading) return; // ⛔ Prevent multiple submissions
         setLoading(true);     // ⏳ Start loading
 
-        const name = e.target[0].value;
-        const email = e.target[1].value;
-        const password = e.target[2].value;
-        const confirmPassword = e.target[3].value;
+        // ✅ Fixed: Use FormData or direct refs instead of array indices
+        const formData = new FormData(e.target);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const password = formData.get('password');
+        const confirmPassword = formData.get('confirmPassword');
 
         // ✅ Basic validation
         if (!name || !email || !password || !confirmPassword) {
@@ -53,16 +55,29 @@ function Signup() {
             const data = await res.json();
 
             if (!res.ok) {
-                toast.error(data.error || "Signup failed"); // ✅ Handle backend error properly
+                toast.error(data.error || "Signup failed");
                 setLoading(false);
             } else {
+                // ✅ Show success toast immediately
                 toast.success("Signup successful! Redirecting to login...", {
                     onClose: () => {
-                        setLoading(false); // Reset loading only when redirecting
                         navigate("/");
                     },
-                    autoClose: 1000,
+                    autoClose: 2000,
                 });
+
+                // ✅ Reset form fields
+                document.querySelector('form').reset();
+                
+                // ✅ Backup navigation in case toast fails
+                setTimeout(() => {
+                    navigate("/");
+                }, 2500);
+                
+                // ✅ Reset loading state after a short delay to show the toast
+                setTimeout(() => {
+                    setLoading(false);
+                }, 100);
             }
         } catch (error) {
             console.error("Signup Error:", error);
@@ -83,12 +98,12 @@ function Signup() {
                 <form className={styles.form} onSubmit={handleSignup}>
                     <div>
                         <label className={styles.label}>Name</label>
-                        <input type="text" placeholder="Name" className={styles.input} required />
+                        <input type="text" name="name" placeholder="Name" className={styles.input} required />
                     </div>
 
                     <div>
                         <label className={styles.label}>Email</label>
-                        <input type="email" placeholder="Example@email.com" className={styles.input} required />
+                        <input type="email" name="email" placeholder="Example@email.com" className={styles.input} required />
                     </div>
 
                     <div className={styles.inputContainer}>
@@ -96,6 +111,7 @@ function Signup() {
                         <div className={styles.passwordWrapper}>
                             <input
                                 type={showPassword ? "text" : "password"}
+                                name="password"
                                 className={styles.input}
                                 required
                                 placeholder="at least 8 characters"
@@ -114,6 +130,7 @@ function Signup() {
                         <div className={styles.passwordWrapper}>
                             <input
                                 type={showConfirm ? "text" : "password"}
+                                name="confirmPassword"
                                 className={styles.input}
                                 placeholder="at least 8 characters"
                                 required
